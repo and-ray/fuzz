@@ -20,11 +20,11 @@ public class MyFirstTest {
         HttpUriRequest request = new HttpGet(SITE_URL + page);
         HttpResponse httpResponse = HttpClientBuilder.create().build().execute(request);
         String answer = httpResponse.getStatusLine().toString();
-        assertFalse(answer.contains("200"), "Не пройдена проверка для страницы " + SITE_URL + page + "\n");
+        assertFalse(answer.contains("200"), "Check has not passed. Page: " + SITE_URL + page + "\n");
     }
 
     @DataProvider
-    public static Object[][] providePageNameToSearch() {
+    public static Object[][] providePageNameToSearch() { //to fix objects
         return new Object[][]{
                 {"!.gitignore"},
                 {"__admin"},
